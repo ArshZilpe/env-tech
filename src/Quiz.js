@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
     ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
-    SimpleGrid, useColorMode, useColorModeValue, FormControl, FormLabel, FormErrorMessage, FormHelperText, Radio, RadioGroup, Button, Stack, Alert, AlertIcon
+    SimpleGrid, useColorMode, useColorModeValue, FormControl, FormLabel, FormErrorMessage, FormHelperText, Radio, RadioGroup, Button, Stack, Alert, AlertIcon, Link as ELink
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom'
 
@@ -27,6 +27,11 @@ export default function Quiz() {
                         Quiz
                     </Button>
                 </Link>
+                <Link exact to="/">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Home
+                    </Button>
+                </Link>
                 <Link exact to="/positives">
                     <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
                         Positive Impacts
@@ -47,11 +52,16 @@ export default function Quiz() {
                         Phones
                     </Button>
                 </Link>
+                <ELink ml="auto" href="https://azmotion.co.uk" target="_blank" rel="noopener noreferrer">
+                    <Button variant="link" colorScheme="teal" size="md" mr="20px">
+                        By Arsh Zilpe
+                    </Button>
+                </ELink>
             </Flex>
             <Flex width="100%" padding="15px">
                 <Flex width="100%" marginTop="100px" justify="center">
 
-                    <Flex width="700px" direction="column">
+                    <Flex direction="column">
 
                         <Box maxW="50rem">
                             <Heading width="100%" lineHeight="1.2" size="3xl" color={tealR}>Quiz</Heading>

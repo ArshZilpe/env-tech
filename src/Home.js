@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import {
-    ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, SimpleGrid, Button
+    ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, SimpleGrid, Button, Link as ELink
 } from '@chakra-ui/react';
+import { FaGithub } from 'react-icons/fa';
+import { AiOutlineForm } from 'react-icons/ai';
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
@@ -14,6 +16,11 @@ export default function Home() {
                 <Link exact to="/quiz">
                     <Button ml="15px" colorScheme="teal" size="md">
                         Quiz
+                    </Button>
+                </Link>
+                <Link exact to="/">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Home
                     </Button>
                 </Link>
                 <Link exact to="/positives">
@@ -36,6 +43,11 @@ export default function Home() {
                         Phones
                     </Button>
                 </Link>
+                <ELink ml="auto" href="https://azmotion.co.uk" target="_blank" rel="noopener noreferrer">
+                    <Button variant="link" colorScheme="teal" size="md" mr="20px">
+                        By Arsh Zilpe
+                    </Button>
+                </ELink>
             </Flex>
             <Flex width="100%" padding="15px">
                 <Flex width="100%" marginTop="100px" justify="center">
@@ -48,6 +60,18 @@ export default function Home() {
                                 The growing use of Technology has both a postive and negative impact on the environment. Explore the website to find out more.
                         </Text>
                         </Box>
+                        <Flex pb="70px">
+                            <a href="https://github.com/ArshZilpe/env-tech" target="_blank" rel="noopener noreferrer">
+                                <Button colorScheme="gray" size="lg" leftIcon={<FaGithub />}>
+                                    GitHub Repo
+                                </Button>
+                            </a>
+                            <Link to="/quiz">
+                                <Button ml="20px" colorScheme="teal" size="lg" leftIcon={<AiOutlineForm />}>
+                                    Try the Quiz
+                                </Button>
+                            </Link>
+                        </Flex>
 
                         <SimpleGrid columns={[1, 2]} spacing={10}>
                             <Link to="/positives">
