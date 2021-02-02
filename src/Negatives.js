@@ -1,19 +1,45 @@
 import React from 'react';
 import {
-    ChakraProvider, Box, Text, Link, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
-    SimpleGrid, useColorMode, useColorModeValue
+    ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
+    SimpleGrid, useColorMode, useColorModeValue, Button
 } from '@chakra-ui/react';
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { Link } from 'react-router-dom'
 
 export default function Negatives() {
 
     const { toggleColorMode } = useColorMode()
     const tealR = useColorModeValue("teal.400", "teal.300")
     return (
-        <Box>            
+        <Box>
             <Flex height="50px" align="center">
                 <ColorModeSwitcher justifySelf="right" />
+                <Link exact to="/quiz">
+                    <Button ml="15px" colorScheme="teal" size="md">
+                        Quiz
+                    </Button>
+                </Link>
+                <Link exact to="/positives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Positive Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/negatives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Negative Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/servers">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Servers
+                    </Button>
+                </Link>
+                <Link exact to="/phones">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Phones
+                    </Button>
+                </Link>
             </Flex>
             <Flex width="100%" padding="15px">
                 <Flex width="100%" marginTop="100px" justify="center">
@@ -46,8 +72,8 @@ export default function Negatives() {
                                 they have to be replaced to return to their 'new like' state. This leads to more environmental concerns, since Lithium Ion batteries use rare earth
                                 materials, which will be thrown away after a few years when they degrade/stop functioning. Nevertheless, the surge in use for technology has
                             lead to a significant increase in power usage, indirectly creating more greenhouse gases.</ListItem>
-                                <ListItem fontSize="xl" pt="15px">Waste: The current mindset of consumers, especially younger ones, is that new electronics, like phones, need to be 
-                                bought every few years in order to have a 'pleasant' experience. There are various factors which have lead to this. However, the environmental 
+                                <ListItem fontSize="xl" pt="15px">Waste: The current mindset of consumers, especially younger ones, is that new electronics, like phones, need to be
+                                bought every few years in order to have a 'pleasant' experience. There are various factors which have lead to this. However, the environmental
                                 impact of this is that a lot of waste is created. Depsite various efforts for reusing and recycling components, many toxic materials are crushed
                                 and released into the atmosphere, contributing to climate change.</ListItem>
                             </UnorderedList>

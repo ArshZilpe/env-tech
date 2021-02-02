@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-    ChakraProvider, Box, Text, Link, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
-    SimpleGrid, useColorMode, useColorModeValue
+    ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
+    SimpleGrid, useColorMode, useColorModeValue, Button
 } from '@chakra-ui/react';
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { Link } from 'react-router-dom'
 
 export default function Positives() {
 
@@ -15,6 +16,31 @@ export default function Positives() {
         <Flex width="100%">
             <Flex height="50px" align="center">
                 <ColorModeSwitcher justifySelf="right" />
+                <Link exact to="/quiz">
+                    <Button ml="15px" colorScheme="teal" size="md">
+                        Quiz
+                    </Button>
+                </Link>
+                <Link exact to="/positives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Positive Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/negatives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Negative Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/servers">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Servers
+                    </Button>
+                </Link>
+                <Link exact to="/phones">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Phones
+                    </Button>
+                </Link>
             </Flex>
             <Flex width="100%" marginTop="100px" justify="center">
 
@@ -51,16 +77,16 @@ export default function Positives() {
                             </Stat>
                         </SimpleGrid>
                         <UnorderedList pt="30px" marginBottom="100px">
-                            <ListItem fontSize="xl" pt="15px">Saving energy: New technologies such as LEDs and smart devices  conserve energy. For example, smart plugs automatically turn off power when 
-                                the device connected is no longer using electricity. Another example would be smart thermostats that can reduce the temperature of the house when
+                            <ListItem fontSize="xl" pt="15px">Saving energy: New technologies such as LEDs and smart devices  conserve energy. For example, smart plugs automatically turn off power when
+                            the device connected is no longer using electricity. Another example would be smart thermostats that can reduce the temperature of the house when
                                 you're not at home.</ListItem>
                             <ListItem fontSize="xl" pt="15px">Using emails and other digital means of communication means that there is no logistics, materials or manufacturing needing
                             to take place. This has lead to a significant decrease in paper usage, as well as letter postage. Overall, this means there is less greenhouse gas emmision.
                             In addition, video conferencing software such as Skype, FaceTime and Teams have reduced environmental damage from travelling.</ListItem>
                             <ListItem fontSize="xl" pt="15px">Technology has allowed for more jobs to transfer to a work-from-home style, and has created even more jobs in the
                             technical space. This has lead a significant reduction in emmissions from commuting, with only a minimal increase in electricity usage.</ListItem>
-                            <ListItem fontSize="xl" pt="15px">The smartphone, most notably, has meant that many products have been merged into one. The calculator, the phone, the fax 
-                            machine, and more have been merged into one product. This means less resources, both in terms of manufacturing and logistics, are used, leading to a reduction 
+                            <ListItem fontSize="xl" pt="15px">The smartphone, most notably, has meant that many products have been merged into one. The calculator, the phone, the fax
+                            machine, and more have been merged into one product. This means less resources, both in terms of manufacturing and logistics, are used, leading to a reduction
                             of carbon from every stage of the process.</ListItem>
                         </UnorderedList>
                     </Box>

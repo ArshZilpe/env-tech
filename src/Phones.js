@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-    ChakraProvider, Box, Text, Link, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
-    SimpleGrid, useColorMode, useColorModeValue
+    ChakraProvider, Box, Text, VStack, Code, Grid, theme, Heading, Flex, Image, UnorderedList, ListItem, Stat, StatLabel, StatNumber, StatHelpText, StatArrow, StatGroup,
+    SimpleGrid, useColorMode, useColorModeValue, Button
 } from '@chakra-ui/react';
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
+import { Link } from 'react-router-dom'
 
 export default function Phones() {
 
@@ -14,6 +15,31 @@ export default function Phones() {
         <Box>
             <Flex height="50px" align="center">
                 <ColorModeSwitcher justifySelf="right" />
+                <Link exact to="/quiz">
+                    <Button ml="15px" colorScheme="teal" size="md">
+                        Quiz
+                    </Button>
+                </Link>
+                <Link exact to="/positives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Positive Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/negatives">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Negative Impacts
+                    </Button>
+                </Link>
+                <Link exact to="/servers">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Servers
+                    </Button>
+                </Link>
+                <Link exact to="/phones">
+                    <Button display={['none', 'flex']} ml="15px" variant="link" colorScheme="teal" size="md">
+                        Phones
+                    </Button>
+                </Link>
             </Flex>
             <Flex width="100%" padding="15px">
                 <Flex width="100%" marginTop="100px" justify="center">
@@ -54,7 +80,7 @@ export default function Phones() {
                                 </SimpleGrid>
                             </Flex>
                             <UnorderedList pt="30px" marginBottom="50px">
-                                <ListItem fontSize="xl" pt="15px">The manufacturing process of a new electronic device is often the most energy hungry part of the product's lifetime. In the 
+                                <ListItem fontSize="xl" pt="15px">The manufacturing process of a new electronic device is often the most energy hungry part of the product's lifetime. In the
                                 case of smartphones, this is shown by the frequent sales and short lifecycle of them.
                                 </ListItem>
                             </UnorderedList>
